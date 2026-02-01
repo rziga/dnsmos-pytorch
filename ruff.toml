@@ -1,0 +1,20 @@
+line-length = 79
+target-version = "py312"
+extend-exclude = ["tests"]
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "D100", # Missing docstring in public module
+    "D104", # Missing docstring in public package
+    "N812", # Lowercase imported as non lowercase
+    "FBT001", # Boolean-typed positional argument in function definition
+    "CPY001", # Missing copyright notice at top of file
+    "ERA001", # Found commented-out code
+]
+
+[lint.pylint]
+max-args = 7
+
+[format]
+line-ending = "auto"
