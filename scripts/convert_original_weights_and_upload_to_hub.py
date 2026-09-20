@@ -8,12 +8,21 @@ from dnsmos_pytorch.dnsmos import DNSMOSp808, DNSMOSp835
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 _GITHUB_URL = "https://github.com/rziga/dnsmos-pytorch"
+_HUB_README_HEADER = """\
+---
+tags:
+- audio
+- speech-quality
+- mos
+- dnsmos
+---
+"""
 
 
 def _hub_readme() -> str:
-    """Return the repo README with a GitHub link prepended."""
+    """Return the repo README with Hub metadata and a GitHub link prepended."""
     readme = (_REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    return f"{_GITHUB_URL}\n\n{readme}"
+    return f"{_HUB_README_HEADER}\n{_GITHUB_URL}\n\n{readme}"
 
 
 def _upload_readme(repo_id: str, *, readme: str, api: HfApi) -> None:

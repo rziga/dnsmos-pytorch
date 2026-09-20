@@ -38,4 +38,4 @@ Weights: [DNSMOSp808](https://huggingface.co/rziga/DNSMOSp808), [DNSMOSp835](htt
 
 This repository is licensed under the [MIT License](LICENSE).
 
-The original DNSMOS weights are from Microsoft and remain subject to their [CC BY 4.0 license](https://github.com/microsoft/DNS-Challenge/blob/master/LICENSE).
+The original DNSMOS weights belong to Microsoft and remain subject to their license, available in the [DNS-Challenge repository](https://github.com/microsoft/DNS-Challenge).
