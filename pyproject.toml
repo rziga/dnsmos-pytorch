@@ -1,7 +1,7 @@
 [project]
 name = "dnsmos-pytorch"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "PyTorch implementation of Microsoft DNSMOS"
 readme = "README.md"
 authors = [
     { name = "Ziga R.", email = "ziga.mlearning@gmail.com" }
