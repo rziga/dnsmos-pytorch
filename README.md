@@ -5,7 +5,7 @@ PyTorch implementation of [Microsoft DNSMOS](https://github.com/microsoft/DNS-Ch
 ## Install
 
 ```bash
-pip install git+https://github.com/rziga/dnsmos-pytorch.git
+pip install git+https://github.com/rziga/dnsmos-pytorch.git@v1.0.0
 ```
 
 ## Usage
