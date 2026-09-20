@@ -12,7 +12,7 @@ pip install git+https://github.com/rziga/dnsmos-pytorch.git@v1.0.0
 
 ## Usage
 
-Audio is expected as `[batch, 1, samples]`. Input is resampled to 16 kHz internally.
+Audio is expected as `[batch, 1, samples]`. Input is resampled to 16 kHz internally. Scores are averaged over overlapping ~9 s windows.
 
 ```python
 import torch
@@ -24,7 +24,7 @@ waveform = waveform[:1].unsqueeze(0)
 
 p808 = DNSMOSp808.from_pretrained("rziga/DNSMOSp808").eval()
 with torch.no_grad():
-    mos = p808(waveform, sample_rate=sample_rate)  # [batch]
+    mos = p808(waveform, sample_rate=sample_rate)  # [batch, 1]
 
 p835 = DNSMOSp835.from_pretrained("rziga/DNSMOSp835").eval()
 # or DNSMOSp835.from_pretrained("rziga/DNSMOSp835-personalized")
@@ -61,11 +61,11 @@ uv run pytest
 `scripts/` has helpers used while developing and publishing the models:
 
 - `download_original_weights.sh` fetches Microsoft's ONNX DNSMOS weights into `assets/original_weights/`.
-- `run_dnsmos_demo.py` scores `assets/audio.wav` (or another file) and a white-noise mix of it.
+- `run_dnsmos_demo.py` scores a wav file and a white-noise mix of it.
 - `convert_original_weights_and_upload_to_hub.py` converts those ONNX weights to this package's format and uploads them to the Hugging Face Hub.
 
 ```bash
-uv run python scripts/run_dnsmos_demo.py
+uv run python scripts/run_dnsmos_demo.py --audio path/to/audio.wav
 ```
 
 ## License

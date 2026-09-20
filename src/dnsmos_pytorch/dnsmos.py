@@ -109,7 +109,7 @@ class DNSMOSp808(nn.Module, PyTorchModelHubMixin):
             sample_rate: int
 
         Returns:
-            [batch_size]
+            [batch_size, 1]
 
         """
         # Resample to target freq
